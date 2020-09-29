@@ -19,10 +19,14 @@ const LoginComp = () => {
         >
           <div display="flex">
             <AccountCircle />
-            <TextField placeholder="Username" style={{ width: 200 }} />
+            <TextField placeholder="Username" style={{ width: 180 }} />
             <br />
             <LockOpenIcon />
-            <TextField placeholder="Password" style={{ width: 200 }} />
+            <TextField
+              placeholder="Password"
+              type="password"
+              style={{ width: 180 }}
+            />
           </div>
           <br />
           <Button

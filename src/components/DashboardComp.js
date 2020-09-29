@@ -12,6 +12,7 @@ import {
   Select,
   Box,
 } from "@material-ui/core";
+import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 
 const useStyles = makeStyles({
   root: {
@@ -149,6 +150,7 @@ export default function DashboardComp() {
               min={0}
               max={100}
             />
+            <VolumeUpIcon />
           </CardActions>
         </Card>
         <Card className={classes.root}>
