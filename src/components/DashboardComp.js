@@ -24,6 +24,7 @@ const useStyles = makeStyles({
   title: {
     fontSize: 20,
     fontWeight: "bold",
+    color: "black",
   },
   pos: {
     marginBottom: 12,
@@ -41,21 +42,56 @@ export default function DashboardComp() {
   });
   const [value, setValue] = React.useState("");
   const [quality, setQuality] = React.useState("");
+  const [notification, setNotification] = React.useState({
+    switch: "",
+    slider: "",
+    select: "",
+  });
 
   const handleOnlineChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
+    if (!event.target.checked) {
+      setNotification({
+        ...notification,
+        switch:
+          "Your application is offline. You won't be able to share or stream music to other devices.",
+      });
+    } else {
+      setNotification({ ...notification, switch: "" });
+    }
   };
 
   const handleVolChange = (event, newValue) => {
     setValue(newValue);
+    if (newValue > 80) {
+      setNotification({
+        ...notification,
+        slider:
+          "Listening to music at a high volume could cause long-term hearing loss.",
+      });
+    } else {
+      setNotification({ ...notification, slider: "" });
+    }
   };
 
   const handleQualityChange = (event) => {
     setQuality(event.target.value);
+    if (event.target.value === 1) {
+      setNotification({
+        ...notification,
+        select:
+          "Music quality is degraded. Increase quality if your connection allows it.",
+      });
+    } else {
+      setNotification({ ...notification, select: "" });
+    }
   };
 
   return (
     <div>
+      <Typography variant="h4" className={classes.userText}>
+        Welcome User!
+      </Typography>
       <Box
         component="span"
         m={20}
@@ -135,6 +171,12 @@ export default function DashboardComp() {
           </CardActions>
         </Card>
       </Box>
+      <Typography variant="h4" className={classes.userText}>
+        System Notifications:
+        <Typography>{notification.switch}</Typography>
+        <Typography>{notification.slider}</Typography>
+        <Typography>{notification.select}</Typography>
+      </Typography>
     </div>
   );
 }
