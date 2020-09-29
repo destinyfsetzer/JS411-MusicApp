@@ -44,7 +44,7 @@ export default function DashboardComp() {
     checkedB: true,
   });
   const [value, setValue] = React.useState("");
-  const [quality, setQuality] = React.useState("");
+  const [quality, setQuality] = React.useState(2);
   const [notification, setNotification] = React.useState({
     switch: "",
     slider: "",
