@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Box from "@material-ui/core/Box";
+import { Button, TextField, Box } from "@material-ui/core";
 import DashboardComp from "./DashboardComp";
 
 const LoginComp = () => {

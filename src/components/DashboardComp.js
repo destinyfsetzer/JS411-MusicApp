@@ -1,20 +1,23 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import Switch from "@material-ui/core/Switch";
-import Slider from "@material-ui/core/Slider";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Box from "@material-ui/core/Box";
+import {
+  makeStyles,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+  Switch,
+  Slider,
+  MenuItem,
+  FormControl,
+  Select,
+  Box,
+} from "@material-ui/core";
 
 const useStyles = makeStyles({
   root: {
     width: 275,
     height: 200,
+    minWidth: 250,
   },
   bullet: {
     display: "inline-block",
@@ -96,6 +99,7 @@ export default function DashboardComp() {
         component="span"
         m={20}
         display="flex "
+        flexWrap="wrap"
         alignItems="center"
         justifyContent="space-evenly"
       >
@@ -170,13 +174,13 @@ export default function DashboardComp() {
             </FormControl>
           </CardActions>
         </Card>
+        <Typography variant="h5" className={classes.userText}>
+          System Notifications:
+          <Typography>{notification.switch}</Typography>
+          <Typography>{notification.slider}</Typography>
+          <Typography>{notification.select}</Typography>
+        </Typography>
       </Box>
-      <Typography variant="h4" className={classes.userText}>
-        System Notifications:
-        <Typography>{notification.switch}</Typography>
-        <Typography>{notification.slider}</Typography>
-        <Typography>{notification.select}</Typography>
-      </Typography>
     </div>
   );
 }
