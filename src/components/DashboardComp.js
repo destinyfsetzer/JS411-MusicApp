@@ -93,7 +93,11 @@ export default function DashboardComp() {
 
   return (
     <div>
-      <Typography variant="h4" className={classes.userText}>
+      <Typography
+        variant="h4"
+        style={{ marginTop: 70, marginLeft: 200 }}
+        className={classes.userText}
+      >
         Welcome User!
       </Typography>
       <Box
@@ -176,7 +180,11 @@ export default function DashboardComp() {
             </FormControl>
           </CardActions>
         </Card>
-        <Typography variant="h5" className={classes.userText}>
+        <Typography
+          variant="h5"
+          style={{ marginTop: 30 }}
+          className={classes.userText}
+        >
           System Notifications:
           <Typography>{notification.switch}</Typography>
           <Typography>{notification.slider}</Typography>
