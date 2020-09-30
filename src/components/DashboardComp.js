@@ -13,6 +13,7 @@ import {
   Box,
 } from "@material-ui/core";
 import VolumeUpIcon from "@material-ui/icons/VolumeUp";
+import VolumeDownIcon from "@material-ui/icons/VolumeDown";
 
 const useStyles = makeStyles({
   root: {
@@ -35,6 +36,9 @@ const useStyles = makeStyles({
   },
   formControl: {
     minWidth: 260,
+  },
+  textAlign: {
+    margin: "100px 200px",
   },
 });
 
@@ -95,14 +99,14 @@ export default function DashboardComp() {
     <div>
       <Typography
         variant="h4"
-        style={{ marginTop: 70, marginLeft: 200 }}
+        style={{ marginTop: 70, marginLeft: 180 }}
         className={classes.userText}
       >
         Welcome User!
       </Typography>
       <Box
         component="span"
-        m={20}
+        m={10}
         display="flex "
         flexWrap="wrap"
         alignItems="center"
@@ -144,6 +148,7 @@ export default function DashboardComp() {
             </Typography>
           </CardContent>
           <CardActions>
+            <VolumeDownIcon />
             <Slider
               Value={value}
               aria-labelledby="discrete-slider"
@@ -180,17 +185,19 @@ export default function DashboardComp() {
             </FormControl>
           </CardActions>
         </Card>
-        <Typography
-          variant="h5"
-          style={{ marginTop: 30 }}
-          className={classes.userText}
-        >
-          System Notifications:
-          <Typography>{notification.switch}</Typography>
-          <Typography>{notification.slider}</Typography>
-          <Typography>{notification.select}</Typography>
-        </Typography>
       </Box>
+      <Typography
+        variant="h5"
+        style={{ marginTop: 30 }}
+        className={classes.textAlign}
+      >
+        System Notifications:
+        <br />
+        <br />
+        <Typography>{notification.switch}</Typography>
+        <Typography>{notification.slider}</Typography>
+        <Typography>{notification.select}</Typography>
+      </Typography>
     </div>
   );
 }

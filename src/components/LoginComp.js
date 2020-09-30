@@ -19,13 +19,14 @@ const LoginComp = () => {
         >
           <div display="flex">
             <AccountCircle />
-            <TextField placeholder="Username" style={{ width: 180 }} />
+            <TextField placeholder="Username" style={{ width: 220 }} />
+            <br />
             <br />
             <LockOpenIcon />
             <TextField
               placeholder="Password"
               type="password"
-              style={{ width: 180 }}
+              style={{ width: 220 }}
             />
           </div>
           <br />
@@ -34,7 +35,7 @@ const LoginComp = () => {
             onClick={() => toggleLogin(isLoggedIn ? false : true)}
             color="secondary"
             size="medium"
-            style={{ width: 200 }}
+            style={{ width: 240 }}
           >
             Login
           </Button>
