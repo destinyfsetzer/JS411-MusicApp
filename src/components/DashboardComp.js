@@ -71,7 +71,7 @@ export default function DashboardComp() {
 
   const handleVolChange = (event, newValue) => {
     setValue(newValue);
-    if (newValue > 80) {
+    if (newValue > 79) {
       setNotification({
         ...notification,
         slider:
